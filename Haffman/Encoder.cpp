@@ -1,7 +1,7 @@
 #include "Encoder.h"
 
-void Encoder::read_table() {
-	input_.open("gen_out_table.txt");
+void Encoder::read_table(std::string file) {
+	input_.open(file);
 	int n;
 	input_ >> n;
 	int symbol;
@@ -14,8 +14,8 @@ void Encoder::read_table() {
 }
 
 
-void Encoder::encode() {
-	input_.open("input.txt");
+void Encoder::encode(std::string file) {
+	input_.open(file);
 	std::string tmp;
 
 	while (std::getline(input_, tmp)) {

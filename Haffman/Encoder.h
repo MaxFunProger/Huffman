@@ -9,8 +9,8 @@
 
 class Encoder {
 public:
-	void encode();
-	void read_table();
+	void encode(std::string);
+	void read_table(std::string);
 private:
 	std::string text_;
 	std::string text_encoded_;

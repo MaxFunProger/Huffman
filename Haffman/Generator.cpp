@@ -1,8 +1,8 @@
 #include "Generator.h"
 
-void Generator::read_text() {
+void Generator::read_text(std::string file) {
 
-	input_.open("input.txt");
+	input_.open(file);
 
 	std::string s;
 
@@ -77,7 +77,6 @@ void Generator::encode() {
 	}
 }
 
-
 void Generator::lcr_out(Node* cur) {
 
 	if (cur->left_ != nullptr) {
@@ -92,16 +91,15 @@ void Generator::lcr_out(Node* cur) {
 	}
 }
 
-
-void Generator::print_tree() {
-	output_.open("gen_out.txt");
+void Generator::print_tree(std::string file) {
+	output_.open(file);
 	lcr_out(tree_);
 	output_.close();
 
 }
 
-void Generator::print_table() {
-	output_.open("gen_out_table.txt");
+void Generator::print_table(std::string file) {
+	output_.open(file);
 	output_ << table_.size() << '\n';
 	for (auto& [key, value] : table_) {
 		output_ << int(key) << ' ' << value << '\n';

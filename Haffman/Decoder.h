@@ -22,9 +22,9 @@ struct Node2 {
 
 class Decoder {
 public:
-	void read_tree();
+	void read_tree(std::string);
 
-	void decode();
+	void decode(std::string, std::string);
 
 private:
 	void lcr_read(Node2*);

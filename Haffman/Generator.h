@@ -22,15 +22,15 @@ struct Node {
 class Generator {
 public:
 
-	void read_text();
+	void read_text(std::string);
 
 	void build_tree();
 
-	void print_tree();
+	void print_tree(std::string);
 
 	void build_table();
 
-	void print_table();
+	void print_table(std::string);
 
 	void encode();
 

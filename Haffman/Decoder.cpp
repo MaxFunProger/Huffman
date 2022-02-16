@@ -1,7 +1,7 @@
 #include "Decoder.h"
 
-void Decoder::read_tree() {
-	input_.open("gen_out.txt");
+void Decoder::read_tree(std::string file) {
+	input_.open(file);
 	std::string s;
 	tree_ = new Node2(nullptr, nullptr, ' ');
 	lcr_read(tree_);
@@ -31,9 +31,9 @@ void Decoder::lcr_read(Node2* cur) {
 	return;
 }
 
-void Decoder::decode() {
-	input_.open("enc_out.txt");
-	output_.open("dec_out.txt");
+void Decoder::decode(std::string file_in, std::string file_out) {
+	input_.open(file_in);
+	output_.open(file_out);
 	input_ >> text_encoded_;
 	Node2* pointer;
 	pointer = tree_;
