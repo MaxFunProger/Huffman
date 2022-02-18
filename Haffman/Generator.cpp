@@ -100,7 +100,7 @@ void Generator::print_tree(std::string file) {
 
 void Generator::print_table(std::string file) {
 	output_.open(file);
-	output_ << table_.size() << '\n';
+	//output_ << table_.size() << '\n';
 	for (auto& [key, value] : table_) {
 		output_ << int(key) << ' ' << value << '\n';
 	}

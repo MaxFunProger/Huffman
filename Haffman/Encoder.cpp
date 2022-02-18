@@ -2,14 +2,31 @@
 
 void Encoder::read_table(std::string file) {
 	input_.open(file);
-	int n;
-	input_ >> n;
+	int n, flag = 0;
+	//input_ >> n;
 	int symbol;
-	std::string tmp;
-	for (int i = 0; i < n; ++i) {
+	std::string tmp, s, tmp2;
+	while (std::getline(input_, s)){
+		for (auto& i : s) {
+			if (i != ' ' && !flag) {
+				tmp.push_back(i);
+			}
+			else {
+				flag = 1;
+				if (i == ' ')
+					continue;
+				tmp2.push_back(i);
+			}
+		}
+		table_[unsigned char(stoi(tmp))] = tmp2;
+		tmp = "";
+		tmp2 = "";
+		flag = 0;
+	}
+	/*for (int i = 0; i < n; ++i) {
 		input_ >> symbol >> tmp;
 		table_[unsigned char(symbol)] = tmp;
-	}
+	}*/
 	input_.close();
 }
 
